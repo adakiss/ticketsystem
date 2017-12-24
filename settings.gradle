@@ -1,1 +1,1 @@
-apply plugin: 'ear'
+include 'ts-ejbservice'
