@@ -2,6 +2,8 @@ apply plugin: 'ear'
 
 ext {
 	log4jVersion='1.2.17'
+	junitVersion='4.12'
+	mockitoVersion='2.13.0'
 }
 
 subprojects {
@@ -13,6 +15,8 @@ subprojects {
 	
 	dependencies {
 		compile group: 'log4j', name: 'log4j', version: log4jVersion
+		testCompile group: 'junit', name: 'junit', version: junitVersion
+		testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
 	}
 }
 
