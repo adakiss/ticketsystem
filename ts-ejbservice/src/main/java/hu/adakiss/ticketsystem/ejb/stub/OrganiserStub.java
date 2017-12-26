@@ -39,4 +39,9 @@ public class OrganiserStub {
 		this.organiserTel = organiserTel;
 		this.organiserEmail = organiserEmail;
 	}
+	
+	@Override
+	public String toString() {
+		return "[Organiser: {" + organiserName + "}, {" + organiserAddress + "}, {" + organiserTel + "}, {" + organiserEmail + "}]";
+	}
 }

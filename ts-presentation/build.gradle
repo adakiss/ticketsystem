@@ -1,0 +1,17 @@
+//apply plugin: 'war'
+plugins {
+  // Tell Gradle to add Vaadin support
+  id 'com.devsoap.plugin.vaadin' version '1.2.0'
+  
+  // Tell Gradle that we are working in eclipse
+  id 'eclipse-wtp'
+  
+  id 'war'
+}
+
+war { archiveName weblayerArchiveName }
+
+dependencies {
+	providedCompile project(':ts-ejbservice')
+	providedCompile group: 'javax', name: 'javaee-api', version:'6.0'
+}

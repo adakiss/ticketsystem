@@ -4,6 +4,9 @@ ext {
 	log4jVersion='1.2.17'
 	junitVersion='4.12'
 	mockitoVersion='2.13.0'
+	jeeVersion='7.0'
+	
+	weblayerArchiveName = 'ts-presentation.war'
 }
 
 subprojects {
@@ -17,9 +20,11 @@ subprojects {
 		compile group: 'log4j', name: 'log4j', version: log4jVersion
 		testCompile group: 'junit', name: 'junit', version: junitVersion
 		testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
+		compile group: 'javax', name: 'javaee-api', version: jeeVersion
 	}
 }
 
 dependencies {
 	deploy project('ts-ejbservice')
+	deploy project(path: 'ts-presentation', configuration: 'archives')
 }

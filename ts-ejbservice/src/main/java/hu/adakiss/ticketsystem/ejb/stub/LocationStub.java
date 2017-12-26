@@ -31,4 +31,9 @@ public class LocationStub {
 		this.locationAddress = locationAddress;
 		this.maxCapacity = maxCapacity;
 	}
+	
+	@Override
+	public String toString() {
+		return "[Location: {" + locationName + "}, {" + locationAddress + "}, {" + maxCapacity + "}]";
+	}
 }

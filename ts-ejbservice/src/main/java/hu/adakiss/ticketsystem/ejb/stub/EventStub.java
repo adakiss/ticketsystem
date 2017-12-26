@@ -114,4 +114,8 @@ public class EventStub {
 	public EventStub(String eventName, String eventType, LocationStub eventLocation, Date eventTime, OrganiserStub eventOrganiser, Integer price) throws TicketSystemInputException {
 		this(eventName, eventType, eventLocation, eventTime, eventLocation.getMaxCapacity(), 0, eventOrganiser, price);
 	}
+	@Override
+	public String toString() {
+		return "[Event: [" + "{" + eventName + "}, " + "{" + eventType + "}, " + "{" + eventLocation.getLocationName() + "}, " + "{" + eventTime + "}, " + "{" + eventTicketsAll + "}, " + "{" + eventTicketsSold + "}, " + "{" + eventOrganiser.getOrganiserName() + "}, " + "{" + eventPrice + "}" + "]";
+	}
 }

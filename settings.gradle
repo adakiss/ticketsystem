@@ -1,1 +1,2 @@
 include 'ts-ejbservice'
+include 'ts-presentation'

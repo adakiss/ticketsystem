@@ -31,4 +31,9 @@ public class CustomerStub {
 		this.customerEmail = customerEmail;
 		this.customerPhone = customerPhone;
 	}
+	
+	@Override
+	public String toString() {
+		return "[Customer: {" + customerName + "}, {" + customerEmail + "}, {" + customerPhone + "}]";
+	}
 }

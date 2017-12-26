@@ -39,4 +39,9 @@ public class SoldTicketStub {
 		this.orderCode = orderCode;
 		this.toReSell = false;
 	}
+	
+	@Override
+	public String toString() {
+		return "[SoldTicket: {" + orderCode + "}, {" + ticketBuyer.getCustomerName() + "}, {" + event.getEventName() + "}, {" + toReSell + "}]";
+	}
 }
