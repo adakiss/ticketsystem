@@ -27,4 +27,5 @@ subprojects {
 dependencies {
 	deploy project('ts-ejbservice')
 	deploy project(path: 'ts-presentation', configuration: 'archives')
+	deploy project('ts-persistence')
 }

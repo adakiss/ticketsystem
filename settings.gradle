@@ -1,2 +1,3 @@
 include 'ts-ejbservice'
 include 'ts-presentation'
+include 'ts-persistence'
