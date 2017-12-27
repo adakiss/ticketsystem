@@ -81,3 +81,15 @@ INSERT INTO ticket (ticket_buyer, ticket_event, ticket_ordercode, ticket_resell)
 VALUES (3, 2, 'D2', false);
 INSERT INTO ticket (ticket_buyer, ticket_event, ticket_ordercode, ticket_resell)
 VALUES (3, 2, 'D3', false);
+
+UPDATE public.event
+SET event_soldticket=3
+WHERE event_id=3;
+	
+UPDATE public.event
+SET event_soldticket=4
+WHERE event_id=2;
+	
+UPDATE public.event
+SET event_soldticket=12
+WHERE event_id=1;
