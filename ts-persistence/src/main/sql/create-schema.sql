@@ -45,7 +45,7 @@ DROP TABLE event CASCADE;
 
 CREATE TABLE event (
 	event_id SERIAL NOT NULL,
-    event_name CHARACTER VARYING(100),
+    event_name CHARACTER VARYING(100) NOT NULL,
     event_location INTEGER NOT NULL,
     event_time DATE NOT NULL,
     event_allticket INTEGER NOT NULL,
