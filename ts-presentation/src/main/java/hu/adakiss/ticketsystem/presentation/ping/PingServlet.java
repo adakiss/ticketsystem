@@ -1,4 +1,4 @@
-package hu.adakiss.ticketsystem.presentation.ping;
+/*package hu.adakiss.ticketsystem.presentation.ping;
 
 import javax.servlet.annotation.WebServlet;
 
@@ -13,4 +13,4 @@ public class PingServlet extends VaadinServlet {
 
 	private static final long serialVersionUID = 1L;
 
-}
+}*/
