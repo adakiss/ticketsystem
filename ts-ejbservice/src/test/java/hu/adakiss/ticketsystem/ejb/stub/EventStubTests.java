@@ -12,8 +12,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import hu.adakiss.ticketsystem.ejb.exception.TicketSystemException;
 import hu.adakiss.ticketsystem.ejb.exception.TicketSystemInputException;
+import hu.adakiss.ticketsystem.persistence.exception.TicketSystemException;
 
 public class EventStubTests {
 	

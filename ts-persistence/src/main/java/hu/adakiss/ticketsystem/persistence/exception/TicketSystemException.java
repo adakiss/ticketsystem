@@ -1,4 +1,4 @@
-package hu.adakiss.ticketsystem.ejb.exception;
+package hu.adakiss.ticketsystem.persistence.exception;
 
 public class TicketSystemException extends Exception {
 

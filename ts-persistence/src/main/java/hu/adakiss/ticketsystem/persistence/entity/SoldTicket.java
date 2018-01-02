@@ -20,7 +20,7 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name=SoldTicket.GET_ALL, query="SELECT t FROM SoldTicket t"),
 	@NamedQuery(name=SoldTicket.GET_BY_CODE, query="SELECT t FROM SoldTicket t JOIN FETCH t.buyer JOIN FETCH t.event WHERE t.orderCode=:orderCode"),
-	@NamedQuery(name=SoldTicket.COUNT_BY_CODE, query="SELECT count(t) FROM SoldTicket t JOIN FETCH t.buyer JOIN FETCH t.event WHERE t.orderCode=:orderCode"),
+	@NamedQuery(name=SoldTicket.COUNT_BY_CODE, query="SELECT count(t) FROM SoldTicket t WHERE t.orderCode=:orderCode"),
 	@NamedQuery(name=SoldTicket.DELETE_BY_CODE, query="DELETE FROM SoldTicket t WHERE t.orderCode=:orderCode")
 })
 public class SoldTicket implements Serializable {
@@ -40,11 +40,11 @@ public class SoldTicket implements Serializable {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="ticket_buyer", nullable=false)
-	private Long buyer;
+	private Customer buyer;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="ticket_event", nullable=false)
-	private Long event;
+	private Event event;
 	
 	@Column(name="ticket_ordercode", nullable=false)
 	private String orderCode;
@@ -52,19 +52,19 @@ public class SoldTicket implements Serializable {
 	@Column(name="ticket_resell", nullable=false)
 	private Boolean toReSell;
 
-	public Long getBuyer() {
+	public Customer getBuyer() {
 		return buyer;
 	}
 
-	public void setBuyer(Long buyer) {
+	public void setBuyer(Customer buyer) {
 		this.buyer = buyer;
 	}
 
-	public Long getEvent() {
+	public Event getEvent() {
 		return event;
 	}
 
-	public void setEvent(Long event) {
+	public void setEvent(Event event) {
 		this.event = event;
 	}
 

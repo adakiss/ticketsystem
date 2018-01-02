@@ -5,6 +5,10 @@ ext {
 	junitVersion='4.12'
 	mockitoVersion='2.13.0'
 	jeeVersion='7.0'
+	log4jVersion='1.2.17'
+	wildflyEEVersion='11.0.0.Final'
+	hibernateVersion='5.2.12.Final'
+	postgresqlVersion='9.4+'
 	
 	weblayerArchiveName = 'ts-presentation.war'
 }
@@ -14,12 +18,19 @@ subprojects {
 	
 	repositories {
 		mavenCentral()
+		maven { url 'http://repository.jboss.org/nexus/content/groups/public' }
 	}
 	
 	dependencies {
 		compile group: 'log4j', name: 'log4j', version: log4jVersion
 		testCompile group: 'junit', name: 'junit', version: junitVersion
 		testCompile group: 'org.mockito', name: 'mockito-core', version: mockitoVersion
+		compile group: 'log4j', name: 'log4j', version: log4jVersion
+	}
+}
+
+configure(subprojects.findAll {it.name != 'ts-persistence'}) {
+	dependencies {
 		compile group: 'javax', name: 'javaee-api', version: jeeVersion
 	}
 }

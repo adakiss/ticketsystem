@@ -21,8 +21,8 @@ import javax.persistence.Table;
 @NamedQueries({
 	@NamedQuery(name=Event.GET_ALL, query="SELECT e FROM Event e"),
 	@NamedQuery(name=Event.GET_BY_PK, query="SELECT e FROM Event e JOIN FETCH e.location JOIN FETCH e.organiser WHERE e.name=:name AND e.location=:location AND e.time=:time"),
-	@NamedQuery(name=Event.COUNT_BY_PK, query="SELECT count(e) FROM Event e JOIN FETCH e.location JOIN FETCH e.organiser WHERE e.name=:name AND e.location=:location AND e.time=:time"),
-	@NamedQuery(name=Event.DELETE_BY_PK, query="DELETE FROM Event e JOIN FETCH e.location JOIN FETCH e.organiser WHERE e.name=:name AND e.location=:location AND e.time=:time")
+	@NamedQuery(name=Event.COUNT_BY_PK, query="SELECT count(e) FROM Event e WHERE e.name=:name AND e.location=:location AND e.time=:time"),
+	//@NamedQuery(name=Event.DELETE_BY_PK, query="DELETE FROM Event e JOIN FETCH e.location JOIN FETCH e.organiser WHERE e.name=:name AND e.location=:location AND e.time=:time")
 })
 public class Event implements Serializable {
 
